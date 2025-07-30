@@ -1,6 +1,7 @@
 
 import { DashboardLinks } from "@/components/DashboardLinks";
 import { Button } from "@/components/ui/button";
+import { Themetoggler } from "@/components/ui/themetoggler";
 import { VoicemailIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,6 +31,7 @@ export default function dashboardlayout({ children }: { children: ReactNode }) {
     </div>
     <div className="flex flex-col">
       <header className="h-14 flex items-center gap-2 border-b bg-muted/20 px-4 lg:h-[60px] lg:px-6 justify-end">
+      <Themetoggler/>
           <Button variant={"outline"}> Logout </Button>
       </header>
 
