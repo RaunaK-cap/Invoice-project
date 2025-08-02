@@ -10,7 +10,7 @@ export const DashboardLinksarray =[
         name:"Dashboard",
         href:"/dashboard",
         icon: HomeIcon
-    } ,
+    },
     {
         id:1,
         name:"Invoice",
@@ -25,11 +25,7 @@ export function DashboardLinks(){
     {
         DashboardLinksarray.map((link)=> (
             <Link 
-            // className=" flex gap-1 p-3 my-1 items-center  hover:bg-slate-100 dark:hover:bg-muted/50 rounded-lg 
-            
-            // "
-            className={`${pathname === link.href?"text-primary bg-primary/5 ":"text-muted-foreground hover:text-foreground"} flex items-center gap-1 rounded-lg p-3  dark:hover:bg-muted/50 transition-all hover:text-primary`}
-            
+            className={`${pathname === link.href?"text-primary bg-primary/5 ":"text-muted-foreground hover:text-foreground"} flex items-center gap-2 rounded-lg p-2 my-1 dark:hover:bg-muted/50 transition-all hover:text-primary`}
             href={link.href} key={link.id}>
                 <link.icon className="size-5" />
                 {link.name}
