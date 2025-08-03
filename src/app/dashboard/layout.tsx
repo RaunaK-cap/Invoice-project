@@ -1,8 +1,9 @@
 
 import { DashboardLinks } from "@/components/DashboardLinks";
+import Submitbutton from "@/components/submitbutton";
 import { Button } from "@/components/ui/button";
 import { Themetoggler } from "@/components/ui/themetoggler";
-import { VoicemailIcon } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -23,17 +24,23 @@ export default function dashboardlayout({ children }: { children: ReactNode }) {
           <nav className="flex-col gap-5 items-start px-2 text-sm ">
             <DashboardLinks/>
           </nav>
-
         </div>
-
       </div>
 
     </div>
     <div className="flex flex-col">
       <header className="h-14 flex items-center gap-2 border-b bg-muted/20 px-4 lg:h-[60px] lg:px-6 justify-end">
       <Themetoggler/>
-          <Button variant={"outline"}> Logout </Button>
+      <form action={async ()=>{
+        "use server"
+        await authClient.signOut()
+      }}>
+          <Submitbutton text="Logout"/>
+      </form>
       </header>
+      <main>
+        {children}
+      </main>
 
     </div>
 
