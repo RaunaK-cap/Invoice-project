@@ -12,7 +12,7 @@ export  async function POST(req:NextRequest){
             message:"Enter the valid information"
         })
     };
-    console.log(verified_invoice_data)
+    
     const session = await auth.api.getSession({
         headers:await headers()
     })
