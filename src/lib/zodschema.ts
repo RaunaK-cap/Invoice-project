@@ -8,7 +8,6 @@ export const onboardinguser_Schema = z.object({
 
 export const invoiceSchema = z.object({
 
-    invoiceName: z.string().min(1, "invoice Name is required "),
 
     total: z.number().min(1, " 1$ is required"),
 
@@ -16,7 +15,7 @@ export const invoiceSchema = z.object({
 
     date: z.string().min(1, "date is required "),
 
-    dueDate: z.string().min(1, "due data is required "),
+    duedate: z.number().min(1, "due data is required "),
 
     FromName: z.string().min(1, "you name is required "),
 
@@ -36,12 +35,14 @@ export const invoiceSchema = z.object({
 
     Note:z.string().optional(),
 
+    createdat : z.string().min(1),
+
+    Updatedat:z.string().min(1),
+
     InvoiceitemDescription : z.string().min(1 , "required"),
 
-    InvoiceitemQuantity : z.number().min(1 , "required"),
+    InvoiceItemQuantity : z.number().min(1 , "required"),
 
-    InvoiceItemRate: z.number().min(1 , "")
-
-
+    InvoiceItemRate: z.number().min(1 , "requierd")
 
 })
